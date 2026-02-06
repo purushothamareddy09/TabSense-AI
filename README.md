@@ -1,7 +1,7 @@
 # TabSense AI: Local Browser Activity Summarizer
 
 <p align="center">
-  <img src="TabSense.png" alt="TabSense Logo" width="180"/>
+  <img src="TabSense.png" alt="TabSense Logo" width="500"/>
 </p>
 
 <p align="center">
