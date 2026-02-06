@@ -128,7 +128,6 @@ pip install fastapi uvicorn requests
 ---
 
 ## 9. Credits
-- Built by Purushothama Reddy
 - Uses [Ollama](https://ollama.com/) and [FastAPI](https://fastapi.tiangolo.com/)
 
 ---
