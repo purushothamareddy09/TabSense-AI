@@ -1,5 +1,7 @@
 # TabSense AI: Local Browser Activity Summarizer
 
+![Architecture Diagram](architecture.png)
+
 A privacy-first system to summarize your browser activity using a Chrome extension, a FastAPI backend, and a local LLM (LLaMA via Ollama).
 
 ---
