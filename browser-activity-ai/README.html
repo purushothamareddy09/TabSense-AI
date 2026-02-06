@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>TabSense AI - Quick Start</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <style>
+    body {
+      background: linear-gradient(135deg, #232526 0%, #0f2027 100%);
+      color: #fff;
+      font-family: 'Segoe UI', 'Roboto', Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+    .container {
+      background: rgba(30,30,40,0.92);
+      border-radius: 18px;
+      margin: 40px 0;
+      padding: 32px 28px 28px 28px;
+      max-width: 650px;
+      box-shadow: 0 8px 32px rgba(0,0,0,0.35);
+    }
+    h1 {
+      background: linear-gradient(90deg, #43e97b, #38f9d7);
+      color: transparent;
+      -webkit-background-clip: text;
+      background-clip: text;
+      font-size: 2.3em;
+      font-weight: 800;
+      margin-bottom: 10px;
+      letter-spacing: 1px;
+      text-align: center;
+    }
+    h2 {
+      color: #ffefc4;
+      font-size: 1.2em;
+      margin-top: 18px;
+      margin-bottom: 8px;
+      font-weight: 600;
+    }
+    ul, ol {
+      margin: 0 0 12px 20px;
+      padding: 0;
+    }
+    li {
+      margin-bottom: 6px;
+      line-height: 1.6;
+    }
+    code, pre {
+      background: #18191c;
+      color: #43e97b;
+      border-radius: 6px;
+      padding: 2px 6px;
+      font-size: 1em;
+    }
+    .badge {
+      display: inline-block;
+      background: linear-gradient(90deg, #ff6ec4, #7873f5);
+      color: #fff;
+      border-radius: 8px;
+      padding: 2px 10px;
+      font-size: 0.95em;
+      margin-left: 6px;
+      font-weight: 600;
+    }
+    .footer {
+      margin-top: 30px;
+      color: #aaa;
+      font-size: 0.98em;
+      text-align: center;
+    }
+    a {
+      color: #43e97b;
+      text-decoration: none;
+    }
+    a:hover {
+      text-decoration: underline;
+    }
+    @media (max-width: 600px) {
+      .container { padding: 18px 6px; }
+      h1 { font-size: 1.4em; }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>TabSense AI <span class="badge">Local</span></h1>
+    <p style="text-align:center; margin-bottom:18px;">Summarize your browser activity with a Chrome extension, FastAPI backend, and local LLM (Ollama).<br><span style="color:#ffefc4;">Privacy-first. No cloud required.</span></p>
+
+    <h2>🚀 Quick Start</h2>
+    <ol>
+      <li><b>Install Ollama</b> (<a href="https://ollama.com/download" target="_blank">download</a>), then run:<br>
+        <code>ollama serve</code> &nbsp; <code>ollama pull llama3</code>
+      </li>
+      <li><b>Start backend</b> (<code>cd backend</code>):<br>
+        <code>pip install fastapi uvicorn requests</code><br>
+        <code>uvicorn app:app --reload</code>
+      </li>
+      <li><b>Load Chrome extension</b> (<code>extension/</code> folder):<br>
+        Go to <code>chrome://extensions</code> → Enable <b>Developer mode</b> → <b>Load unpacked</b>
+      </li>
+      <li><b>Browse the web</b> — extension sends activity to backend.</li>
+      <li><b>Open</b> <a href="http://127.0.0.1:8000" target="_blank">http://127.0.0.1:8000</a> for the dashboard.</li>
+    </ol>
+
+    <h2>🔗 API Endpoints</h2>
+    <ul>
+      <li><code>POST /activity</code> — Receive tab activity</li>
+      <li><code>GET /activity</code> — Current tab data</li>
+      <li><code>POST /analyze</code> — Summarize tabs (LLM)</li>
+      <li><code>POST /chat</code> — General chat with LLaMA</li>
+      <li><code>GET /what-am-i-doing</code> — Activity summary</li>
+      <li><code>GET /</code> — Modern dashboard UI</li>
+    </ul>
+
+    <h2>🛠️ Requirements</h2>
+    <ul>
+      <li>Python 3.8+ <span class="badge">fastapi</span> <span class="badge">uvicorn</span> <span class="badge">requests</span></li>
+      <li>Ollama (LLaMA model)</li>
+      <li>Chrome (for extension)</li>
+    </ul>
+
+    <h2>💡 Notes</h2>
+    <ul>
+      <li>No raw HTML or incognito data is stored.</li>
+      <li>All LLM calls are local (Ollama).</li>
+      <li>For OpenAI fallback, set your API key in backend.</li>
+    </ul>
+
+    <div class="footer">
+      Built by <b>Purushothama Reddy</b> · <a href="https://ollama.com/" target="_blank">Ollama</a> · <a href="https://fastapi.tiangolo.com/" target="_blank">FastAPI</a><br>
+      <span style="color:#43e97b;">Enjoy privacy-first, local browser activity AI! 🚀</span>
+    </div>
+  </div>
+</body>
+</html>
